@@ -11,6 +11,7 @@ const FULLNAME_COMPONENT = [
   "EmailTemplate",
   "MLPredictionDefinition",
   "FieldRestrictionRule",
+  "AppointmentAssignmentPolicy",
 ];
 
 export async function main(options) {
