@@ -2,6 +2,7 @@ import execa from "execa";
 import fs from "fs";
 import xml2js from "xml2js";
 
+// * 指定で取得エラーになった機能を追加
 const FULLNAME_COMPONENT = [
   "CustomObject",
   "CallCenter",
@@ -12,6 +13,7 @@ const FULLNAME_COMPONENT = [
   "MLPredictionDefinition",
   "FieldRestrictionRule",
   "AppointmentAssignmentPolicy",
+  "UserProfileSearchScope"
 ];
 
 export async function main(options) {
