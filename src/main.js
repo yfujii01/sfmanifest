@@ -16,6 +16,11 @@ const FULLNAME_COMPONENT = [
   "UserProfileSearchScope"
 ];
 
+
+const IGNORE_COMPONENT = [
+    "CustomObjectTranslation"
+]
+
 export async function main(options) {
   const metas = await describeMetaData(options);
   const metaTypes = await createMetaTypes(options, metas);
@@ -53,6 +58,9 @@ async function createMetaTypes(options, metas) {
 
 async function createMetaType(meta, options) {
   let metaType;
+  if (IGNORE_COMPONENT.includes(meta.xmlName)) {
+      return null;
+  }
   if (FULLNAME_COMPONENT.includes(meta.xmlName) || options.inpackage) {
     if (meta.inFolder && options.infolder) {
       metaType = await findListMetaFolder(meta, options);
